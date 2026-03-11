@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const languages = [
   {
     id: 1,
@@ -40,21 +42,16 @@ const languages = [
 export default function AppMain() {
   return (
     <main>
-      <div className="buttons">
-        <button className="btn">HTML</button>
-        <button className="btn">CSS</button>
-        <button className="btn">JavaScript</button>
-        <button className="btn">Node.js</button>
-        <button className="btn">Express</button>
-        <button className="btn">reactJS</button>
-      </div>
+      {languages.map((item) => (
+        <div className="buttons" key={item.id}>
+          <button className="btn">{item.title}</button>
+        </div>
+      ))}
 
       {languages.map((item) => (
         <div className="card" key={item.id}>
           <h5 className="card_title">{item.title}</h5>
-          <p>
-            {item.description}
-          </p>
+          <p>{item.description}</p>
         </div>
       ))}
     </main>
