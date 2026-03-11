@@ -48,7 +48,7 @@ export default function AppMain() {
         {languages.map((item) => (
           <button
             onClick={() => setSelectedLanguage(item)}
-            className="btn"
+            className={`btn ${item.id === selectedLanguage?.id ? 'active_btn' : ''}`}
             key={item.id}
           >
             {item.title}

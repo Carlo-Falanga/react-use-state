@@ -40,6 +40,10 @@ main{
   margin: 0 0.6rem 0 0;
 }
 
+.active_btn{
+  background-color: var(--active_btn);
+}
+
 .card{
   padding: 1rem;
   border: 1px solid lightgrey;
