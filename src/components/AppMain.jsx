@@ -40,23 +40,34 @@ const languages = [
 ];
 
 export default function AppMain() {
-
-const [selectedLanguage, setSelectedLanguage] = useState(languages[0])
+  const [selectedLanguage, setSelectedLanguage] = useState(null);
 
   return (
     <main>
-        <div className="buttons">
-      {languages.map((item) => (
-          <button onClick={() => setSelectedLanguage(item)} className="btn" key={item.id}>{item.title}</button>
+      <div className="buttons">
+        {languages.map((item) => (
+          <button
+            onClick={() => setSelectedLanguage(item)}
+            className="btn"
+            key={item.id}
+          >
+            {item.title}
+          </button>
         ))}
-        </div>
+      </div>
 
-      
-        <div className="card">
-          <h5 className="card_title">{selectedLanguage.title}</h5>
-          <p>{selectedLanguage.description}</p>
-        </div>
-     
+      <div className="card">
+        {selectedLanguage ? (
+          <>
+            <h5 className="card_title">{selectedLanguage.title}</h5>
+            <p>{selectedLanguage.description}</p>
+          </>
+        ) : (
+          <>
+            <p>Nessun linguaggio selezionato</p>
+          </>
+        )}
+      </div>
     </main>
   );
 }
