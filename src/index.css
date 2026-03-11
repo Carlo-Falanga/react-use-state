@@ -29,6 +29,7 @@ main{
 
 .buttons{
   margin-bottom: 2rem;
+  display: inline-block;
 }
 
 .btn{
